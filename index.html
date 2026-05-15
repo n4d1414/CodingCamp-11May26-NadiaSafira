@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Expense & Budget Visualizer</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Expense & Budget Visualizer</h1>
+
+            <div class="balance-card">
+                <h2>Total Balance</h2>
+                <p id="balance">Rp 0</p>
+            </div>
+        </header>
+
+        <section class="form-section">
+
+            <h2>Tambah Transaksi</h2>
+
+            <form id="transaction-form">
+
+                <input type="text" id="item-name" placeholder="Nama Item" required>
+
+                <input type="number" id="amount" placeholder="Jumlah Pengeluaran" required>
+
+                <select id="category" required>
+
+        <option value="">Pilih Kategori</option>
+        <option value="Food">Food</option>
+        <option value="Transport">Transport</option>
+        <option value="Fun">Fun</option>
+        <option value="Shopping">Shopping</option>
+        <option value="Other">Other</option>
+
+      </select>
+
+                <button type="submit">
+        Tambah
+      </button>
+
+            </form>
+
+        </section>
+
+        <section class="summary-section">
+
+            <div class="summary-card">
+                <h3>Total Transaksi</h3>
+                <p id="total-transaction">0</p>
+            </div>
+
+            <div class="summary-card">
+                <h3>Total Pengeluaran</h3>
+                <p id="total-expense">Rp 0</p>
+            </div>
+
+        </section>
+
+        <section class="main-content">
+
+            <div class="transaction-section">
+
+                <div class="transaction-header">
+
+                    <h2>Daftar Transaksi</h2>
+
+                    <select id="sort-select">
+          <option value="latest">Terbaru</option>
+          <option value="highest">Tertinggi</option>
+          <option value="lowest">Terendah</option>
+        </select>
+
+                </div>
+
+                <div id="transaction-list" class="transaction-list"></div>
+
+            </div>
+
+            <div class="chart-section">
+
+                <h2>Visualisasi Pengeluaran</h2>
+
+                <canvas id="expenseChart"></canvas>
+
+            </div>
+
+        </section>
+
+        <footer>
+            <button id="theme-toggle">
+      Toggle Dark Mode
+    </button>
+        </footer>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
